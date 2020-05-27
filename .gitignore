@@ -1,0 +1,6 @@
+.venv
+*.csv
+*.html
+*.xml
+*.zip
+.vscode/
