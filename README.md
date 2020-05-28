@@ -8,6 +8,9 @@ The pipeline downloads data from the [Fraser Experimental Forest Headquarters st
 
 The options include `--path`, `--resample`, and `--save`. `--path` specifies the path to the data file. `--resample` gives the sampling frequency used by `pandas.DataFrame.resample` method such as 'M' or 'Q'. `--save` will save the plot as a .png file
 
+A successful run looks something like this
+![img][/img/conducto_run.png]
+
 ## Note
 Running this on WSL Windows 10 Home Ubuntu 16.04 LTS will give the error 
 
@@ -17,4 +20,4 @@ conducto.internal.host_detection.WSLMapError: The context path /home/dylan/condu
 
 This is likely because Docker Desktop for Windows cannot be installed directly in Windows 10 Home and can only be used through Docker Toolbox that hosts Docker on a virtual machine (https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-As a result, I had to run this example in an Ubuntu virtual machine.
+As a result, I had to run this example on an Ubuntu server.
