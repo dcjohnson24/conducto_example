@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 import matplotlib.pyplot as plt
 import argparse
+import conducto as co
 
 
 # Check out pd.tseries.offsets.__all__ for a list of resample options
@@ -20,10 +21,22 @@ def plot(df: pd.DataFrame, resample: str=None, save: bool=False) -> None:
     ax.set_ylabel('Precipitation (inches)')
     ax.set_title(title)
     if save:
-        print(f'Saving plot to {Path.cwd()}')
-        plt.savefig('rainfall_data.png')
-    plt.show()
+        filename = '/tmp/rainfall_plot.png'
+        dataname = 'rainfall_data.png'
+        print(f'Saving plot to /tmp/')
+        plt.savefig(filename)
+        co.data.pipeline.put(dataname, filename)
+        url = co.data.pipeline.url(dataname)
+        print(
+            f"""<ConductoMarkdown> 
+            ![img]({url})
 
+           {df.head().to_markdown()}
+           </ConductoMarkdown>
+            """
+        )
+
+    plt.show()
 
 def main():
     parse = argparse.ArgumentParser()
