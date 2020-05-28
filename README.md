@@ -9,7 +9,7 @@ The pipeline downloads data from the [Fraser Experimental Forest Headquarters st
 The options include `--path`, `--resample`, and `--save`. `--path` specifies the path to the data file. `--resample` gives the sampling frequency used by `pandas.DataFrame.resample` method such as 'M' or 'Q'. `--save` will save the plot as a .png file
 
 A successful run looks something like this
-![img][/img/conducto_run.png]
+![img][./img/conducto_run.png]
 
 ## Note
 Running this on WSL Windows 10 Home Ubuntu 16.04 LTS will give the error 
